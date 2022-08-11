@@ -1,4 +1,4 @@
-function Get-AzAvdMsixPackageExample {
+function Get-AzWvdMsixPackageExample { # Should be Get-AzAvdMsixPackage
     [CmdletBinding(DefaultParameterSetName = 'Main')]
 
     Param (
@@ -75,4 +75,4 @@ function Get-AzAvdMsixPackageExample {
 
     } # process
     end {} # end
-}  #function Get-AzAvdMsixPackage
+}  #function Get-AzWvdMsixPackageExample
