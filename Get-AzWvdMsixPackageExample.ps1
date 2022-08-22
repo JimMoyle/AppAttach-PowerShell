@@ -1,4 +1,5 @@
-function Get-AzWvdMsixPackageExample { # Should be Get-AzAvdMsixPackage
+function Get-AzWvdMsixPackageExample {
+    # Should be Get-AzAvdMsixPackage
     [CmdletBinding(DefaultParameterSetName = 'Main')]
 
     Param (
@@ -53,7 +54,7 @@ function Get-AzWvdMsixPackageExample { # Should be Get-AzAvdMsixPackage
     process {
         switch ($PSCmdlet.ParameterSetName) {
             ResourceGroupObjectPipeline { $InputObject }
-            Main { write-output 'Main'}
+            Main { write-output 'Main' }
             Default {}
         }
 
@@ -73,6 +74,20 @@ function Get-AzWvdMsixPackageExample { # Should be Get-AzAvdMsixPackage
         Output should be of type [Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.MsixPackage]
         #>
 
+        <#
+        Output Object should have the following methods:
+        RemoveHostPoolByName <string>
+        AddHostPoolByName <string>
+        Enable <bool>
+        #>
+
+        <#
+        Abbreviated Output should be:
+        DisplayName IsActive IsRegularRegistration Version
+        ----------- -------- --------------------- -------
+        XML Notepad     True                 False 2.8.0.60
+        #>
+        
     } # process
     end {} # end
 }  #function Get-AzWvdMsixPackageExample
