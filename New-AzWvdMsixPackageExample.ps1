@@ -1,4 +1,6 @@
-function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
+#Not finished
+
+function New-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
     [CmdletBinding(SupportsShouldProcess = $true, DefaultParameterSetName = 'FullName')]
 
     Param (
@@ -12,9 +14,12 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
         [System.String[]]$FullName,
 
         [Parameter(
-            ValuefromPipelineByPropertyName = $true
+            ParameterSetName = 'DisplayName',
+            Position = 0,
+            ValuefromPipelineByPropertyName = $true,
+            Mandatory = $true
         )]
-        [System.String]$DisplayName,
+        [System.String[]]$DisplayName,
 
         [Parameter(
             Position = 1,
@@ -29,11 +34,10 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
         [System.String]$SubscriptionId,
 
         [Parameter(
-            ValuefromPipelineByPropertyName = $true,
-            ValuefromPipeline = $true
+            ValuefromPipelineByPropertyName = $true
         )]
-        [Alias('PackageAlias')]
-        [Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20210712.ExpandMsixImage]$PackageInfo,
+        [Alias('FullName','Path')]
+        [System.String]$ImagePath,
 
         [Parameter(
             ValuefromPipelineByPropertyName = $true
@@ -68,4 +72,4 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
 
     } # process
     end {} # end
-}  #function Update-AzWvdMsixPackageExample
+}  #function New-AzWvdMsixPackageExample

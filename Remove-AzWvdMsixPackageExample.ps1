@@ -47,7 +47,9 @@ function Remove-AzWvdMsixPackageExample {
         Set-StrictMode -Version Latest
     } # begin
     process {
-        
+        if ($PSCmdlet.ShouldProcess("", "Operation")) {
+            Write-Output 'WhatIf Result'
+        }
     } # process
     end {} # end
 }  #function Remove-AzWvdMsixPackageExample
