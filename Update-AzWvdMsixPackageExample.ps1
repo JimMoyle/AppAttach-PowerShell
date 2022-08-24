@@ -9,7 +9,7 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
             ValuefromPipeline = $true,
             Mandatory = $true
         )]
-        [System.String[]]$FullName,
+        [System.String]$FullName, #Removed Array capability
 
         [Parameter(
             ValuefromPipelineByPropertyName = $true
