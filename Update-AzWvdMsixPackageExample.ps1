@@ -77,6 +77,8 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
     } # begin
     process {
 
+        #Note <Get-AzWvdMsixPackage | Update-AzWvdMsixPackage> should give you back the same package
+
         if ($PSCmdlet.ShouldProcess("", "Operation")) {
             Write-Output 'WhatIf Result'
         }
