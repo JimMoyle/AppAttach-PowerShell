@@ -11,7 +11,7 @@ function New-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
             ValuefromPipeline = $true,
             Mandatory = $true
         )]
-        [System.String[]]$FullName,
+        [System.String]$FullName,
 
         [Parameter(
             ParameterSetName = 'DisplayName',
@@ -19,7 +19,7 @@ function New-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
             ValuefromPipelineByPropertyName = $true,
             Mandatory = $true
         )]
-        [System.String[]]$DisplayName,
+        [System.String]$DisplayName,
 
         [Parameter(
             Position = 1,
