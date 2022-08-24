@@ -12,11 +12,13 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
         [System.String]$FullName, #Removed Array capability
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
         [System.String]$DisplayName,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             Position = 1,
             ValuefromPipelineByPropertyName = $true,
             Mandatory = $true
@@ -24,11 +26,13 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
         [System.String]$ResourceGroupName,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
         [System.String]$SubscriptionId,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true,
             ValuefromPipeline = $true
         )]
@@ -36,25 +40,36 @@ function Update-AzWvdMsixPackageExample { # Should be Set-AzAvdMsixPackage
         [Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20210712.ExpandMsixImage]$PackageInfo,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
         [System.String[]]$HostPoolName,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
         [Switch]$IsActive,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
         [Alias('IsRegularRegistration')]
         [Switch]$LogOnBlocking,
 
         [Parameter(
+            ParameterSetName = 'FullName',
             ValuefromPipelineByPropertyName = $true
         )]
-        [psobject]$DefaultProfile
+        [psobject]$DefaultProfile,
+
+        [Parameter(
+            ParameterSetName = 'PipelineInput',
+            ValuefromPipelineByPropertyName = $true,
+            ValuefromPipeline = $true
+        )]
+        [Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.Api20210712.MsixPackage]$InputObject
     )
 
     begin {
